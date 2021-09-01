@@ -5,10 +5,7 @@ const dotenv = require("dotenv");
 dotenv.config();
 const mongoose = require('./config/db');
 
-
-
 const app = express();
-
 
 var corsOptions = {
     origin: "http://localhost:4200"
@@ -25,6 +22,19 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // app.use(express.urlencoded({ extended: true }));
 // app.use(express.json());
+
+var loginRoute = require('./routes/login');
+app.use('/loginRoute', loginRoute);
+
+
+
+
+
+
+
+
+
+
 var port = process.env.PORT;
 app.listen(port, () => {
     console.log(`server started running on port :${port}`)
