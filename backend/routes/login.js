@@ -1,0 +1,1 @@
+var userModel = require("./../models/loginModel")
