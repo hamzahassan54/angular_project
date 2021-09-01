@@ -2,9 +2,9 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require("cors");
 const dotenv = require("dotenv");
-const { mongo } = require('mongoose');
 dotenv.config();
 const mongoose = require('./config/db');
+
 
 
 const app = express();
@@ -29,3 +29,4 @@ var port = process.env.PORT;
 app.listen(port, () => {
     console.log(`server started running on port :${port}`)
 })
+mongoose.connectionWithDatabase();
